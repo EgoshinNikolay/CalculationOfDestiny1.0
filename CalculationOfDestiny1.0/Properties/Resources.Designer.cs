@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CalculationOfDesnsityBeta.Properties
+namespace CalculationOfDensityBeta.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace CalculationOfDesnsityBeta.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CalculationOfDesnsityBeta.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CalculationOfDensityBeta.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

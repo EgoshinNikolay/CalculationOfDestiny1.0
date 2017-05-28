@@ -1,4 +1,4 @@
-﻿namespace CalculationOfDesnsityBeta
+﻿namespace CalculationOfDensityBeta
 {
     partial class Main
     {

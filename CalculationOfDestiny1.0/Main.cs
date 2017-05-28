@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CalculationOfDesnsityBeta
+namespace CalculationOfDensityBeta
 {
     public partial class Main : Form
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculationOfDesnsityBeta
+namespace CalculationOfDensityBeta
 {
     /// <summary>
     /// Ареометр, градуированный при температуре 20С.

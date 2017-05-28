@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CalculationOfDesnsityBeta.Properties
+namespace CalculationOfDensityBeta.Properties
 {
 
 

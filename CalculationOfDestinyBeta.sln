@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationOfDesnsityBeta", "CalculationOfDestiny1.0\CalculationOfDesnsityBeta.csproj", "{BD3AA422-CBF5-45E0-AF8C-0855314F9AB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationOfDensityBeta", "CalculationOfDestiny1.0\CalculationOfDensityBeta.csproj", "{BD3AA422-CBF5-45E0-AF8C-0855314F9AB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
