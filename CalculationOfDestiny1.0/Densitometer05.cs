@@ -34,10 +34,6 @@ namespace CalculationOfDensityBeta
         public virtual int GetAccuracy() { return ACCURACY; }
         public string GetTypeLiquid() { return _typeLiquid; }
 
-        ////Защищенные свойства для инициализации полей в классах потомках.
-        //protected double Temp { set => _temp = value; }
-        //protected double Pressure { set => _temp = value; }
-        //protected double Destiny { set => _temp = value; }
-        //protected double TypeLiquid { set => _temp = value; }
+ 
     }
 }

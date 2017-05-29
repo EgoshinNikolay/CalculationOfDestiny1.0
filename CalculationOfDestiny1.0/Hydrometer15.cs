@@ -27,7 +27,7 @@ namespace CalculationOfDensityBeta
 
             K = 1 - 0.000023 * (t - 15) - 0.00000002 * Math.Pow((t - 15), 2);
             pt = par * Math.Round(K,4);
-            return Math.Round(pt,ACCURACY, MidpointRounding.AwayFromZero);
+            return Math.Round(pt, ACCURACY, MidpointRounding.AwayFromZero);
         }
         public override int GetAccuracy() { return ACCURACY; }
     }

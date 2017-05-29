@@ -96,7 +96,7 @@ namespace CalculationOfDensityBeta
             {
                 density = po15 * Math.Exp(-vita15 * (t - 15) * (1 + 0.8 * vita15 * (t - 15))) / (1 - gama * P);
             }
-            return Math.Round(density, _meter.GetAccuracy(), MidpointRounding.AwayFromZero);
+            return Math.Round(density, _meter.GetAccuracy());//, MidpointRounding.AwayFromZero);
         }
 
         //Метод прямых подстановок
@@ -104,24 +104,37 @@ namespace CalculationOfDensityBeta
         {
             double vita15 = 0; 
             double ro15 = 0;
-            double ro15prev = 0; 
+            double ro15prev = 0;
+            double ro15prevprev = -1;
+
             double gama = 0;
             //  double test;
             ro15 = _meter.GetDensity(); //Подставляем измеренную прибором плотность
             while (Math.Abs(ro15 - ro15prev) > 0.01)  //Повторяем метод прямых подстоновок пока  рассчитанная плотность при 15С не будет менятся более чем на 0,01 кг/м3
             {
+                if (ro15==ro15prevprev) //Дополнительная проверка, чтоб исключить зацикливание если изменение плотности не достигает значения ниже 0,01 кг/м3.
+                {
+                    return ro15prev;
+                }
+                else
+                {
+                    ro15prevprev = ro15prev;
+                }
                 ro15prev = ro15;  //Сохраняем предыдущее значение плотности
                 if (_meter.GetPressure() == 0)  //Если избычтоное давление при измерении плотности прибором равно 0
                 {
                     vita15 = GetVita15(ro15, _meter.GetTypeLiquid()); //находим коэффицент объемного расширения
                     ro15 = GetRo15(_meter.GetDensity(),_meter.GetTemp(),vita15); // находим плотности при 15С в приблежении
-                    
+
+
                 }
                 else  //Если избычтоное давление при измерении плотности прибором не равно 0
                 {
                     vita15 = GetVita15(ro15, _meter.GetTypeLiquid());//находим коэффицент объемного расширения (плотность каждый раз подставляем новую, найденную в прошлой итерации)
                     gama = GetGama(ro15,_meter.GetTemp());//находим коэффицент сжимаемости (плотность каждый раз подставляем новую, найденную в прошлой итерации)
                     ro15 = GetRo15(_meter.GetDensity(),_meter.GetPressure(),_meter.GetTemp(), vita15, gama);
+
+
                     
                 }
 
@@ -149,7 +162,7 @@ namespace CalculationOfDensityBeta
             double t = temp;  //Температура, при которой измерялась плотность
             double ro15;  //Плотность при 15 градусах в приблежении 
 
-            ro15 = rot / Math.Exp(vita15 * (15 - t) * (1 + 0.8 * vita15 * (t - 15)));
+            ro15 = rot / Math.Exp(-vita15 * (t - 15) * (1 + 0.8 * vita15 * (t - 15)));
             return Math.Round(ro15, _meter.GetAccuracy(), MidpointRounding.AwayFromZero);
         }
 

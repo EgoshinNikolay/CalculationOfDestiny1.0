@@ -20,17 +20,6 @@ namespace CalculationOfDensityBeta
             {
             CoefficientTable table = new CoefficientTable();
 
-            //Hydrometer20 h20 = new Hydrometer20(836.7, 0, 1127.3, "Нефть");
-
-            //Calculation calc = new Calculation(h20, table, 1.3, 16.3);
-
-            //MessageBox.Show(calc.GetDensity().ToString());
-
-            //Densitometer05 d1 = new Densitometer05(836.15, 2.45, 27.3, "Нефть");
-
-            //calc = new Calculation(d1, table, 1.28, 16.32);
-
-            //MessageBox.Show(calc.GetDensity().ToString());
             }
             catch(InputException)
             {
